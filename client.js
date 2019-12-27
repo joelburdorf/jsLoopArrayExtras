@@ -45,4 +45,28 @@ console.log(startsOrEnds);
 
 // console.log the average word length in the array
 
+function itemLength(allTheWords){
+  var currentWord = '';
+  var currentWordLength = 0;
+  var sum = 0;
+  var avg = 0;
+  if(allTheWords.length >0){
+    for(var i = 0; i < allTheWords.length; i++){
+      currentWord = allTheWords[i];
+      currentWordLength = currentWord.length;
+      sum += currentWordLength;
+      avg = sum/allTheWords.length;
+    }
+  return avg;
+  }
+}
+
+console.log(itemLength(allTheWords));
+
 // console.log an array of all words shorter than the average word length
+
+const shortWords = allTheWords.filter(word => {
+  return word.length < 5.87;
+});
+
+console.log(shortWords);
