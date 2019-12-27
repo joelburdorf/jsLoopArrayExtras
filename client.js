@@ -40,9 +40,8 @@ console.log(matchWithOutE);
 
 // console.log an array of all words that either start with the letter "s" or end with "ing"
 
-// find all strings in array containing 'thi'
-
-
+const startsOrEnds = allTheWords.filter(s => s.startsWith('s') || s.endsWith('ing'));
+console.log(startsOrEnds);
 
 // console.log the average word length in the array
 
