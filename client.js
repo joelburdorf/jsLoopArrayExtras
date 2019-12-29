@@ -4,6 +4,8 @@ let allTheWords = [ 'calculating', 'guitar', 'various', 'thirsty', 'history', 'f
 console.log(allTheWords.length);
 
 // console.log "true" if allTheWords contains the word "error", "false" if it does not
+
+
 for (let i=0; i<allTheWords.length; i++){
   if ( allTheWords[i] === 'error'){
     console.log(true);
@@ -12,18 +14,13 @@ for (let i=0; i<allTheWords.length; i++){
 }
 }
 
-//console.log(allTheWords.indexOf('error'));  //I discoverded that my 'else' statement did not log 'false' when I changed 'error' in the array to 'erro'.
-                                            // so I used indexOf to see if 'error' was still in the array, but returned -1. I then knew that even after removing
-                                            // 'error', the if statement still logged 'true'. So there was somthing wrong with my 'if' statement
-                                            // Solution was to make 'if' statement conditional an absolute === instead of only =
-
-//for (errorWord of allTheWords){
-//  if (errorWord === 'error'){
-//    console.log(' is true')
-//  } else {
-//    console.log('is false')
-//  }
-//}
+for (errorWord of allTheWords){
+ if (errorWord === 'error'){
+    console.log(true)
+  } else {
+    console.log(false)
+ }
+}
 
 // console.log an array of all words that are longer than 7 characters
 const sevenPlus = allTheWords.filter(word => {    //.filter returns an array of elements after filtering out certain elements. This uses a callback function
@@ -33,7 +30,7 @@ console.log(sevenPlus);
 
 // console.log an array of all words that do not contain the letter "e"
 
-const matchWithOutE = allTheWords.filter(s => !s.includes('e'));
+const matchWithOutE = allTheWords.filter(s => !s.includes('e'));            //figuring out exactly how to use the '!' took me a little while
 
 console.log(matchWithOutE);
 
@@ -45,13 +42,13 @@ console.log(startsOrEnds);
 
 // console.log the average word length in the array
 
-function itemLength(allTheWords){
-  var currentWord = '';
-  var currentWordLength = 0;
-  var sum = 0;
-  var avg = 0;
-  if(allTheWords.length >0){
-    for(var i = 0; i < allTheWords.length; i++){
+function itemLength(allTheWords){             //I found this solution on-line and taylored it for use in this lesson
+  let currentWord = '';                       //I did not create it from scratch
+  let currentWordLength = 0;
+  let sum = 0;
+  let avg = 0;
+  if(allTheWords.length > 0){
+    for(let i = 0; i < allTheWords.length; i++){
       currentWord = allTheWords[i];
       currentWordLength = currentWord.length;
       sum += currentWordLength;
